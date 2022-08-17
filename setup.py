@@ -34,17 +34,8 @@ import shutil
 import os
 from glob import glob
 
-if os.environ['BOARD'] != 'Ultra96' and os.environ['BOARD'] != 'Pynq-Z1' and os.environ['BOARD'] != 'Pynq-Z2':
-	print("Only supported on a Ultra96, Pynq-Z1 or Pynq-Z2 Board")
-	exit(1)
+PLATFORM="pynqZ1-Z2"
 
-if os.environ['BOARD'] == 'Ultra96':
-	PLATFORM="ultra96"
-elif os.environ['BOARD'] == 'Pynq-Z1' or os.environ['BOARD'] == 'Pynq-Z2':
-	PLATFORM="pynqZ1-Z2"
-else:
-	raise RuntimeError("Board not supported")  
-	
 package_data = []
 data_files = []
 package_include_data = [ 'bitstreams/', 'params/', 'libraries/' ]
