@@ -37,13 +37,7 @@ import math
 from ctypes import c_size_t
 from pynq import Overlay, Xlnk
 
-if os.environ['BOARD'] == 'Ultra96':
-	PLATFORM="ultra96"
-elif os.environ['BOARD'] == 'Pynq-Z1' or os.environ['BOARD'] == 'Pynq-Z2':
-	PLATFORM="pynqZ1-Z2"
-else:
-	raise RuntimeError("Board not supported")
-
+PLATFORM="pynqZ1-Z2"
 
 QNN_ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
 ILSVRC_PIXEL_MEAN_FILE = os.path.join(QNN_ROOT_DIR, "params/ilsvrc_pp_mean.npy")
