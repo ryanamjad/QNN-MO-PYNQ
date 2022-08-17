@@ -38,12 +38,7 @@ from pynq import Overlay, Xlnk
 import subprocess
 import time
 
-if os.environ['BOARD'] == 'Ultra96':
-	PLATFORM="ultra96"
-elif os.environ['BOARD'] == 'Pynq-Z1' or os.environ['BOARD'] == 'Pynq-Z2':
-	PLATFORM="pynqZ1-Z2"
-else:
-	raise RuntimeError("Board not supported")
+PLATFORM="pynqZ1-Z2"
 
 QNN_ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
 BITSTREAM_NAME="W1A3-{0}.bit".format(PLATFORM)
